@@ -31,10 +31,12 @@ var ObjectId = require('mongodb').ObjectID
 var morgan       = require('morgan');
 var bodyParser   = require('body-parser')
 var session      = require('express-session');
+var baffle = require('baffle')
 
 const DB_NAME = process.env.DB_NAME
 const DB_URL =process.env.DB_URL+`/${DB_NAME}`
 const PORT = process.env.PORT || 3000
+const uploadz = require('express-fileupload')
 // console.log(`*********URL : ${DB_URL}`)
 var db
 
@@ -55,6 +57,7 @@ require('./config/passport')(passport); // pass passport for configuration
 *******************************/
 
 app.use(express.static('public'))
+app.use(uploadz())
 app.use('/uploads' ,express.static('uploads'))
 app.use(morgan('dev'))
 app.use(bodyParser.json())

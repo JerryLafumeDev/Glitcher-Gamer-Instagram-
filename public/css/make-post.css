@@ -1,5 +1,4 @@
 .make-post-panel {
-  position: absolute;
   top: 50%;
   left: 50%;
   transform: -50% -50%;
@@ -8,8 +7,46 @@
   transition: all .4s .2s ease;
   opacity: 1;
   z-index: 2;
+  color: black;
+  width: 100%;
+  height: 100%;
 }
-
+.newHead{
+  margin: 0px 0px 20px 0px;
+  font-family: spaceman;
+  padding: 15px 15px 15px 20px !important;
+  border-radius: 10px;
+  text-align: center;
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 .make-post-panel.hide {
-  opacity: 0;
+}
+.makePost{
+  display: inline-grid;
+  margin: 8%;
+  width: 75%;
+  height: 68%;
+}
+label{
+  margin: 47px 0px 0px;
+  font-weight: bold;
+  font-family: spaceman;
+}
+.uploadOn{
+  border: 1px solid;
+  font-family: revert;
+  /* text-transform: uppercase; */
+  text-align: justify;
+  font-size: 14px;
+  font-weight: 100;
+  height: 21px;
+  margin-top: 0;
+  border-radius: 3px;
+}
+.uploadOn:hover{
+  background-color: rgb(221, 221, 221);
+  cursor: pointer;
 }

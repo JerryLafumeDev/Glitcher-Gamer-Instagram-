@@ -1,0 +1,433 @@
+/* Change autocomplete styles in WebKit */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: rgb(240, 27, 211);
+  transition: background-color 5000s ease-in-out 0s;
+}
+body{
+    position: relative;
+    background: #e6e6eb;
+    width: 100vw;
+    height: 100vh;
+}
+header{
+    width: 102vw;
+    height: 100px;
+    /* position: absolute; */
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    /* position: relative; */
+    box-sizing: border-box;
+    padding: 40px;
+    border: 2px solid rgba(0, 0, 0, .15);
+    /* border-radius: 25px 25px 25px 25px; */
+    box-shadow: 0 0 10px rgb(0 0 0 / 25%), inset 0 0 2px 0px white;
+    background: rgba(0, 0, 0, 0.055);
+    overflow: hidden;
+    backdrop-filter: blur(13px);
+    -webkit-backdrop-filter: blur(3px);
+    left: -10px;
+}
+#login {
+    background-image: url(../img/background.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 24px;
+    background-position-x: 0px;
+    position: fixed;
+    top: 103%;
+    /* right: 50%; */
+    bottom: 0;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 1683px;
+    position: fixed;
+    height: 1000px;
+    margin: auto;
+    transform: translate(-50%, -50%);
+}
+html{
+    font-family: 'spaceman';
+}
+.divGroup {
+    display: inline-block;
+    text-align: center;
+}
+
+.form-control{
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background-color: #70a4b1ce;
+    color: white;
+    width: 100%;
+    border: 1px solid #00000073;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+    border-radius: 5px;
+}
+.form-control.email{
+    margin-bottom: 52px;
+    margin-top: 32px;
+}
+.form-control.email.cover, .form-control.cover2{
+    position: absolute;
+    top: 51%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: black;
+    width: 99%;
+    height: 13%;
+}
+.form-control.email.cover.sign, .form-control.cover2.sign, .form-control.username.cover.sign{
+    position: absolute;
+    top: 55.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: black;
+    width: 99%;
+    height: 13%;
+}
+.form-control.email.cover.sign{
+
+}
+.form-control.cover2{
+    top: 88.6%;
+    left: 50%;
+}
+.form-control.cover2.sign{
+    top: 93.2%;
+    left: 50%;
+}
+.form-control.username.cover.sign{
+    top: 37.5% !important;
+    left: 50% !important;
+}
+
+.glass {
+    position: fixed;
+    box-sizing: border-box;
+    padding: 40px;
+    border: 2px solid rgba(0, 0, 0, .15);
+    border-radius: 25px 25px 25px 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .25), inset 0 0 2px 0px white;
+    background-image: radial-gradient(black, black, black, black, black, transparent);    overflow: hidden;
+    backdrop-filter: blur(13px);
+    -webkit-backdrop-filter: blur(3px);
+    width: 516px;
+    height: 487px;
+    transform: translate(-50%, -50%);
+    top: 54%;
+    left: 1391px;
+}
+
+.btn.btn-warning.btn-lg{
+    position: relative;
+    /* box-sizing: border-box; */
+    padding: 10px;
+    margin:5px;
+    width: 100px;
+    /* border: 2px solid rgba(0, 0, 0, 0.15); */
+    border-radius: 25px 25px 25px 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25), inset 0 0 2px 0px     white;
+    background-color: #00000082;
+    color:white;
+    overflow: hidden;
+     -webkit-backdrop-filter: blur(55px);
+    backdrop-filter: blur(-22px);
+    font-size: 17px;
+    text-transform: uppercase;
+    font-family: 'Spaceman';
+    letter-spacing: 1.5px;
+    width: 120px;
+}
+.btn.btn-warning.btn-lg:hover{
+    background-color: aqua;
+    color: black !important;
+}
+.btn.btn-warning.btn-lg .signupBtn:hover{
+    background-color: aqua;
+    color: black;
+}
+.signupBtn{
+    width: 100%;
+    height: 100%;
+}
+.GlassButtons{
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+  position: absolute;
+  top: 89%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.welcomeHeader{
+  color:whitesmoke;
+  font-family: "Roboto", sans-serif;
+  overflow: hidden;
+  height: 500px;
+}
+
+.section--1{
+    width: 100%;
+    height: 70%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.text__glitch{
+  font-size: 133px;
+  letter-spacing: 1px;
+  text-align: center;
+  text-transform: Uppercase;
+  color: aquamarine;
+  font-family: 'spaceman' !important;
+  letter-spacing: 5px;
+  background:#000000;
+  width: 100%;
+  padding: 0px 20px;
+  margin: 0;
+}
+.text__glitch.signup{
+    font-size: 93px;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: Uppercase;
+    color: aquamarine;
+    font-family: 'spaceman' !important;
+    letter-spacing: 3px;
+    background: #000000;
+    width: 100%;
+    padding: 0px 20px ;
+    margin-bottom: 0;
+}
+.logo{
+    width: 316px;
+    margin-top: -37px;
+    background: transparent;
+    background-image: url(../img/logo.gif);
+    height: 90px;
+    width: 110px;
+    background-size: 167%;
+    border-radius: 50%;
+    background-position: center;
+    border: 3px solid rgba(206, 5, 162, 0.842);
+}
+.text__glitch.logo{
+    font-size: 50px;
+    padding-top: 21px;
+    position: relative;
+    background-image: radial-gradient(black, transparent ) !important;
+}
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000000; 
+    height: 100%;
+}
+.signupBtn{
+    text-decoration: none;
+    color: white;
+}
+.blog.glass{
+    left: 364px;
+    width: 695px;
+    height: 798px;
+    z-index: 1;
+    background: transparent;
+    position: absolute;
+    top: 58%;
+    backdrop-filter: blur(6px);
+}
+.blogHead{
+    text-align: center;
+    font-size: 51px;
+    margin: 10px 0px;
+    letter-spacing: 2px;
+}
+.blogArt{
+    width: 100%;
+    font-size: 22px;
+    font-family: monospace;
+    letter-spacing: -2.5px;
+    float: right;
+    margin-top: 0;
+    margin-bottom: 13px;
+}
+#streamSearch{
+    position: absolute;
+    top: 59%;
+    left: 28%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    height: 41px;
+    border-radius: 13px;
+    background: transparent;
+    background-image: linear-gradient( rgba(0, 255, 255, 0.596), transparent, rgba(255, 0, 234, 0.376));
+}
+#streamSearch::placeholder{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: spaceman;
+    padding: 7px;
+}
+.searchLabel{
+    position: absolute;
+    top: 22%;
+    left: 19%;
+    transform: translate(-50%, -50%);
+}
+.nav{
+    list-style: none;
+    display: inline-block;
+    position: absolute;
+    top: 36%;
+    left: 72%;
+    transform: translate(-50%, -50%);
+    width: 900px;
+}
+.nav li{
+    display: inline;
+    font-size: 31px;
+    margin-right: 35px;
+}
+.navli:hover{
+    color: aqua;
+    text-decoration: line-through;
+}
+.navli{
+    text-decoration: none;
+    color: black;
+    transition: all 0.4s ease;
+}
+#twitch-embed{
+    width: 100%;
+    height: 321px;
+    overflow: hidden;
+    border: 6px solid rgba(255, 0, 200, 0.205);
+    border-radius: 20px;
+}
+iframe{
+    width: 157%;
+    height: 100%;
+}
+/* .txt {
+    color: #ffffff;
+    font-size:200px;
+    font-family: Arial;
+    text-transform: uppercase;
+} */
+.text__glitch::before {
+    content: 'Login';
+    position: absolute;
+    mix-blend-mode: difference;
+    filter: blur(3px);
+    top: 22%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+}
+.text__glitch.signup::before {
+    content: 'Sign Up';
+    position: absolute;
+    mix-blend-mode: difference;
+    filter: blur(3px);
+    top: 15.3%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    font-size: 93px;
+    width: 100%;
+}
+.text__glitch.logo::before {
+    content: 'Glitcher';
+    position: absolute;
+    mix-blend-mode: difference;
+    filter: blur(1px);
+    top: 64%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.neon-wrapper {
+    display:inline-flex;
+    filter: brightness(200%);
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    display: block;
+    background: black;
+}
+#user{
+    position: absolute;
+    color: transparent;
+}
+.gradient{
+    background: linear-gradient(114.5793141156962deg, rgba(6, 227, 250,1) 4.927083333333334%,rgb(212 0 145) 97.84374999999999%);
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    height:100%;
+    mix-blend-mode: multiply;
+}
+.dodge {
+    background: radial-gradient(circle,white,black 35%) center / 25% 25%;
+    position: absolute;
+    top:-100%;
+    left:-100%;
+    right:0;
+    bottom:0;
+    mix-blend-mode: color-dodge;
+    animation: dodge-area 3s linear infinite;
+}
+form{
+    background: black;
+}
+@keyframes dodge-area {
+    to {
+        transform: translate(50%,50%);
+    }
+}
+
+@font-face {
+    font-family: Spaceman;
+    src: url(../fonts/space-mission-font/SpaceMission-rgyw9.ttf);
+    src: url(../fonts/space-mission-font/SpaceMission-rgyw9.eot);
+    src: url(../fonts/space-mission-font/SpaceMission-rgyw9.woff);
+    src: url(../fonts/space-mission-font/SpaceMission-rgyw9.woff2);
+    src: url(../fonts/space-mission-font/SpaceMission-rgyw9.svg);
+    src: url(../fonts/space-mission-font/SpaceMission-rgyw9.otf);
+    font-style: normal;
+    font-weight: 100;
+}
+
+.pop{
+    font-size: 27px;
+    margin-bottom: 10px;
+    margin: 20px 10px 10px 10px;
+    float: left;
+}
+.twitchLink{
+    text-decoration: none;
+}

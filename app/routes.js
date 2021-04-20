@@ -25,6 +25,7 @@ module.exports = function(app, db, passport, ObjectId, upload) {
           console.log('posts++++++++')
           console.log(result2)
           res.render('user.ejs', {
+            profile: result,
             user: result,
             posts: result2
           })
@@ -36,6 +37,15 @@ module.exports = function(app, db, passport, ObjectId, upload) {
       db.collection('posts').find().toArray((err, result) => {
         if(err) return console.log(err)
         res.render('feed.ejs' , {
+          user: req.user,
+          posts: result
+        })
+      })
+    })
+    app.get('/upload', isLoggedIn, (req, res) => {
+      db.collection('posts').find().toArray((err, result) => {
+        if(err) return console.log(err)
+        res.render('upload.ejs' , {
           user: req.user,
           posts: result
         })
@@ -68,6 +78,41 @@ module.exports = function(app, db, passport, ObjectId, upload) {
       })
     })
 
+    //Profile picture Upload
+
+    app.post('/uploadAvi', (req, res) => {
+      if (req.files) {
+        console.log(req.files);
+        let file = req.files.file
+        let fileName = file.name
+        console.log(fileName);
+        file.mv('public/uploads/' + fileName, function(err) {
+          if (err) {
+            res.send(err)
+          } else {
+            res.redirect('/feed')
+            // res.send("File Uploaded")
+          }
+        })
+        //finding the user profile and updating it with the img
+        db.collection('posts').findOneAndUpdate({
+          authorID: ObjectId(req.params.uID)
+         
+        }, {
+          //updates - sets the img property to whatever is to the right of the colon
+          $set: {
+            img: "/uploads/" + fileName
+          }
+        }, {
+          // if profile cant be found it would create a new profile which is why we set it to false
+          upsert: false
+        }, (err, result) => {
+          if (err) return console.log(err)
+          console.log('saved to database')
+        })
+      }
+    })
+
 
 
     /**************************
@@ -79,7 +124,7 @@ module.exports = function(app, db, passport, ObjectId, upload) {
         console.log(req.file)
         db.collection('posts').insertOne({
           title: req.body.title,
-          authorName: req.user.local.email,
+          authorName: req.user.local.username,
           authorID: req.user._id,
           path: req.file.path,
           body: req.body.body

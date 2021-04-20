@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/login.css">
+</head>
+  <!-- <%- include('./partials/head.ejs') %> -->
+  <body>
+    <header> <div class="logo"><h3 class="text__glitch logo">Glitcher</h3></div></header>
+    <section class='main'>
+      
+      <div id="login">
+
+        <div class="divGroup glass">
+          <div class="welcomeHeader">
+            <section class="section--1">
+              <div class="wrapper">
+                <div class="neon-wrapper">
+                    <h3 class="text__glitch">Login</h3>
+                    <span class="gradient"></span>
+                    <span class="dodge"></span>
+                
+            
+             <% if (message.length > 0) { %>
+                    <div class="alert alert-danger"><%= message %></div>
+                <% } %>
+          
+          
+        <form action="/signup" method="post">
+          <div>
+            <input placeholder="Email" autocomplete="off"        class="form-control email" name="" type="text">
+            <input placeholder="Email" autocomplete="off"        class="form-control email cover" name="email" type="text">
+          </div>
+          
+          <div>
+            <input type="password" autocomplete="new-password"        class="form-control" placeholder="password" name="">
+            <input type="password" autocomplete="new-password"        class="form-control cover2" placeholder="password" name="password">
+          </div>
+      </div>
+      </div>
+    </section>
+  </div>
+          <div class="GlassButtons">
+            <button  class="btn btn-warning btn-lg"><a href="/login">Login</a></button>
+            <button class="btn btn-warning btn-lg" type="submit">Sign Up</button>
+          </div>
+           </form>
+          
+        </div>
+      </div>
+      </section>
+    </section>
+    <script src="js/baffle.min.js"></script>
+    <script src="js/login.js"></script>
+  </body>
+</html>

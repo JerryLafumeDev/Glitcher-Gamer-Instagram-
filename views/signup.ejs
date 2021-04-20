@@ -1,32 +1,87 @@
-<!doctype html>
-<html>
-<%- include('./partials/head.ejs') %>
-<body>
-  <section class='main'>
-    <h1>Signup</h1>
-
-    <% if (message.length > 0) { %>
-        <div class="alert alert-danger"><%= message %></div>
-    <% } %>
-
-    <!-- LOGIN FORM -->
-    <form action="/signup" method="post">
-        <div class="form-group">
-            <label>Email</label>
-            <input type="text" class="form-control" name="email">
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/login.css">
+</head>
+  <body>
+    <header> 
+      <div class="logo"></div>
+      <label for="search" class="searchLabel">Search Twitch Stream</label>
+      <input type="text" name="search" id="streamSearch" placeholder="Welcome to Glitcher! :)">
+      <ul class="nav">
+        <li><a href="" class="navli">Join Us</a></li>
+        <li><a href="" class="navli">Partners</a></li>
+        <li><a href="" class="navli">Contact Us</a></li>
+        <li><a href="" class="navli">Blog</a></li>
+      </ul>
+    </header>
+    <section class='main'>
+      
+      <div id="login">
+        <div class="blog glass">
+          <p id="user"></p>
+          <h1 class="blogHead">Welcome to Glitcher!</h1>
+          <p class="blogArt">Glitcher is where millions of gamers come together every day to chat, interact, connect, and make their own entertainment together.</p>
+          <p class="blogArt">Your creative content thrives here. Bring your passions; we’ll help you build a community around them.</p>
+          <p class="blogArt">Let's Stop Toxic Gamer mentality, who's says you can only enjoy one game ? or be part of one community? Change that here at Glitcher. 👾</p>
+          <h4 class="pop">Most Popular Stream on <a href="https://www.twitch.tv/" class="twitchLink">Twitch</a></h4>
+          <div id="twitch-embed"></div>
+          
         </div>
-        <div class="form-group">
-            <label>Password</label>
-            <input type="password" class="form-control" name="password">
+        <div class="divGroup glass">
+          <div class="welcomeHeader">
+            <section class="section--1">
+              <div class="wrapper">
+                <div class="neon-wrapper">
+                    <h3 class="text__glitch signup">Sign Up</h3>
+                    <span class="gradient"></span>
+                    <span class="dodge"></span>
+                
+            
+             <% if (message.length > 0) { %>
+                    <div class="alert alert-danger"><%= message %></div>
+                <% } %>
+          
+          
+        <form action="/signup" method="post">
+          <div>
+            <input placeholder="Username" autocomplete="off"        class="form-control username" name="" type="text">
+            <input placeholder="Username" autocomplete="off"        class="form-control username cover sign" name="username" type="text" required>
+          </div>
+
+          <div>
+            <input placeholder="Email" autocomplete="off"        class="form-control email" name="" type="text">
+            <input placeholder="Email" autocomplete="off"        class="form-control email cover sign" name="email" type="text">
+          </div>
+          
+          <div>
+            <input type="password" autocomplete="new-password"        class="form-control" placeholder="password" name="">
+            <input type="password" autocomplete="new-password"        class="form-control cover2 sign" placeholder="password" name="password">
+          </div>
+      </div>
+      </div>
+    </section>
+  </div>
+          <div class="GlassButtons">
+            <button  class="btn btn-warning btn-lg"><a href="/" class="signupBtn">Login</a></button>
+            <button class="btn btn-warning btn-lg" type="submit">Sign Up</button>
+          </div>
+           </form>
+          
         </div>
-
-        <button type="submit" class="btn btn-warning btn-lg">Signup</button>
-    </form>
-
-    <hr>
-
-    <p>Already have an account? <a href="/login">Login</a></p>
-    <p>Or go <a href="/">home</a>.</p>
-  </section>
-</body>
+      </div>
+      </section>
+    </section>
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+    </script>
+    <script src="js/twitchapi.js"></script>
+    <script src="js/baffle.min.js"></script>
+    <script src="js/login.js"></script>
+  </body>
 </html>

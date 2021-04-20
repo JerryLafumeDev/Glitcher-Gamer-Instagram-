@@ -1,27 +1,218 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <%- include('./partials/head.ejs') %>
+  <link rel="stylesheet" href="/css/profile.css">
   <body>
-    <link rel="stylesheet" href="/css/profile.css">
-    <section class='main flex-container flex-column'>
-      <h1><%= user.local.email %></h1>
-      <h2>Your Posts</h2>
-      <% if (posts) { %>
-      <div class="grid-container user-posts">
+
+    <header> 
+      <div class="logo"></div>
+      <form action="" class="form glass">
+      <input type="text" name="search" id="streamSearch" placeholder="Search.."> <button type="submit" class="subSearch"><i class="fab fa-searchengin"></i></button></form>
+      <div class="headBtns">
+        <a href="/upload" class="uploadLink glass"><button class="uploadBtn">
+          <svg class="icon uploadSvg">
+            <use xlink:href="#plus" />
+            </svg>
+           <span class="uploadTxt">Upload</span>
+        </button></a>
+        <button class="hdBtns glass"><i class="fas fa-bell"></i></button>
+        <button class="hdBtns glass"><i class="fas fa-comment-alt"></i></button>
+      </div>
+    </header>
+
+    <div class="profileSec">
+      <div class="profileBlackdrop glass">               
+      <div class="profileSecHeader">
+        <a href="/user/<%= user._id %>" class="picLink glass"><div class="profilePic">
+          <div class="proPict"></div>
+      </div></a>
+      <% if (user.local.email) { %>
+        <div title="<%= user.local.username %>" class="nameAni"><a href="/user/<%= user._id %>" class="text-xl font-medium capitalize mt-4 uk-link-reset"><h2 class="dasd"><%= user.local.username %></h2></a></div>
+      <% } %>
+      <div class="profileStats">
+          <div class="stats glass">
+              <a href="/profile">
+                  <strong>Post</strong>
+                  <div> 130</div>
+              </a>
+          </div>
+          <div class="stats glass">
+              <a href="/profile">
+                  <strong>Following</strong>
+                  <div> 1,230</div>
+              </a>
+          </div>
+          <div class=" stats glass">
+              <a href="/profile">
+                  <strong>Followers</strong>
+                  <div> 2,430</div>
+              </a>
+          </div>
+      </div>
+    </div>
+    <hr class="profileSpacer">
+    <ul class="profileList glass">
+      <li class="active">
+          <a href="/feed">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+              </svg>
+              <span> Feed </span> </a>
+      </li>
+      <li>
+          <a href="explore.html">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+              <span> Explore </span> </a>
+      </li>
+      <li>
+          <a href="chat.html">
+            <svg class="icon prolist">
+              <use xlink:href="#message" />
+              </svg>
+              <span> Messages </span> <span class="nav-tag"></span> </a>
+      </li>
+      <li>
+          <a href="trending.html">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" />
+              </svg>
+              <span> Trending </span> </a>
+      </li>
+      <li>
+          <a href="market.html">
+            <svg class="icon prolist">
+              <use xlink:href="#shopping-store"/>
+              </svg>
+              <span> Marketplace </span> </a>
+      </li>
+      <li>
+          <a href="setting.html">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span> Settings </span>
+          </a>
+              <li><a href="/profile">
+                <svg class="icon prolist">
+                  <use xlink:href="#customer-support" />
+                  </svg>
+               <span>General</span></a></li>
+              <li><a href="/profile"> 
+                <svg class="icon prolist">
+                  <use xlink:href="#user" />
+                  </svg>
+                <span>Account setting</span></a></li>
+              <li><a href="/profile">
+                <svg class="icon prolist">
+                  <use xlink:href="#dollar" />
+                  </svg>
+               <span>Billing</span><span class="nav-tag"></span> </a></li>
+          
+      </li>
+      <li>
+          <a href="/profile">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
+              <span> My Profile </span> </a>
+      </li>
+      <li>
+          <hr class="my-2">
+      </li>
+      <li>
+          <a href="/">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+              </svg>
+              <span> Logout </span> </a>
+      </li>
+  </ul>
+</div> 
+    </div>
+    
+    <section class='main flex-container flex-column glass'>
+      <div class="container">
+        <div class="profile">
+          <div class="profile-image">
+          <img src="../img/placehold.jpg" alt="">
+          </div>
+          <div class="profile-user-settings">
+      <h1 class="profile-user-name"><%= user.local.username %></h1>
+      
+      <form class="formTwo" action="/uploadAvi" method="POST" enctype="multipart/form-data">
+        <img src="<%= profile.img %>"  class="img-thumbnail" alt="...">
+        <p> <input class="chooseFile" type="file" name="file"></p>
+        <p> <input id="upload" type="submit" name="submit" value="upload"></p>
+      </form>
+				<button class="btn profile-edit-btn">Edit Profile</button>
+
+				<button class="btn profile-settings-btn" aria-label="profile settings"><i class="fas fa-cog" aria-hidden="true"></i></button>
+
+			</div>
+
+			<div class="profile-stats">
+
+				<ul>
+					<li><span class="profile-stat-count">164</span> posts</li>
+					<li><span class="profile-stat-count">188</span> followers</li>
+					<li><span class="profile-stat-count">206</span> following</li>
+				</ul>
+
+			</div>
+
+			<div class="profile-bio">
+
+				<p><span class="profile-real-name">Jane Doe</span> Lorem ipsum dolor sit, amet consectetur adipisicing elit 📷✈️🏕️</p>
+
+			</div>
+
+		</div>
+		<!-- End of profile section -->
+
+	</div>
+  <!-- End of container -->
+    </section>
+	
+    <div class="container">
+      <div class="gallery glass">
+        <% if (posts) { %>
+        <div class="gallery-item" tabindex="0">
         <% for(let i = 0 ; i < posts.length ; i++) { %>
-          <div class="user-post">
+          <div class="user-post glass" style="width: 16vw !important; padding: 5px; overflow: visible;">
             <a href="/post/<%= posts[i]._id %>">
               <img src="../<%= posts[i].path %>" alt="<%= posts[i].title %>">
             </a>
           </div>
         <% } %>
       </div>
-      <% } %>
+      <div class="gallery-item-info">
 
-      <%- include('./partials/make-post.ejs') %>
-      <%- include('./partials/add-button.ejs') %>
-      <%- include('./partials/back-button.ejs') %>
-    </section>
+        <ul>
+          <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> 56</li>
+          <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 2</li>
+        </ul>
+
+      </div>
+      <% } %>
+    
     <script type="text/javascript" src='../js/user.js'>console.log(user)</script>
     <script type="text/javascript" src='../js/main.js'>console.log(user)</script>
   </body>
